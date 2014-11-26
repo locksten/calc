@@ -18,9 +18,11 @@ static int exec_operator(stack *_stack, char _operator[])
 	double *op1 = (double *)stack_pop(_stack);
 	if (strcmp(_operator, "sqrt") == 0)
 		*answer = sqrt(*op1);
-	else if (strcmp(_operator, "log") == 0)
+	else if (strcmp(_operator, "ln") == 0)
 		*answer = log(*op1);
-	else if (strcmp(_operator, "logten") == 0)
+	else if (strcmp(_operator, "lb") == 0)
+		*answer = log2(*op1);
+	else if (strcmp(_operator, "lg") == 0)
 		*answer = log10(*op1);
 	else if (strcmp(_operator, "cos") == 0)
 		*answer = cos(*op1);
