@@ -134,6 +134,11 @@ static char *dynamic_cat(char s[], size_t *size, char in[])
 static void enqueue(char *queue[], size_t *size, char token[])
 {
 	*queue = dynamic_cat(*queue, size, token);
+	if (!*queue) {
+		fprintf(stderr, "%s:%d: error: "
+			"failed to allocate memory\n", __FILE__, __LINE__);
+		exit(EXIT_FAILURE);
+	}
 	*queue = dynamic_cat(*queue, size, DELIMITER);
 	if (!*queue) {
 		fprintf(stderr, "%s:%d: error: "
