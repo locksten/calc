@@ -191,6 +191,12 @@ static oper_info *init_oper_info(size_t *size)
 	for (size_t i = 0; i < *size; ++i) {
 		oper_info tmp;
 		tmp.str = (char *)malloc(sizeof(char) * MAX_IN_STR_LEN);
+		if (!tmp.str) {
+			fprintf(stderr, "%s:%d: error: "
+				"failed to allocate memory\n",
+					__FILE__, __LINE__);
+			exit(EXIT_FAILURE);
+		}
 		int n_moved = 0;
 		sscanf(p, "%s %d %d%n", tmp.str, &tmp.association,
 			&tmp.precedence, &n_moved);
