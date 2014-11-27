@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include <cmath>
+#include <math.h>
+#include <stdbool.h>
 #include "../include/rpn_calc.h"
 #include "../include/shunting_yard.h"
 #include "../include/tokenizer.h"

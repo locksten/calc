@@ -1,5 +1,5 @@
-CC = g++
-CFLAGS = -ansi -Wall
+CC = gcc
+CFLAGS = -std=c99 -Wall -pedantic -lm
 
 all: a.out
 

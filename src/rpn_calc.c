@@ -2,8 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include <cmath>
+#include <math.h>
 #include "../include/stack.h"
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+#ifndef M_E
+#define M_E 2.71828182845904523536
+#endif
 
 static int exec_operator(stack *_stack, char _operator[]);
 static int exec_constant(stack *_stack, char _operator[]);

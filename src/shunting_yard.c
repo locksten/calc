@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define MAX_IN_STR_LEN 128
 #define STARTING_QUEUE_SIZE 256
