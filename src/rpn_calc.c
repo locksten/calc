@@ -6,10 +6,14 @@
 #include "../include/stack.h"
 
 static int exec_operator(stack *_stack, char _operator[]);
+static int exec_constant(stack *_stack, char _operator[]);
 static int is_number(char s[]);
 
 static int exec_operator(stack *_stack, char _operator[])
 {
+	if (!exec_constant(_stack, _operator))
+		return 0;
+
 	if (_stack->size < 1) {
 		fprintf(stderr, "error: too few arguments\n");
 		return -1;
@@ -121,6 +125,22 @@ double *calculate(char *input)
 	double *rezult = (double *)stack_pop(values);
 	stack_free(values);
 	return rezult;
+}
+
+static int exec_constant(stack *_stack, char _operator[]) {
+	double *answer = (double *)malloc(sizeof(double));
+	if (strcmp(_operator, "pi") == 0)
+		*answer = M_PI;
+	else if (strcmp(_operator, "tau") == 0)
+		*answer = 2 * M_PI;
+	else if (strcmp(_operator, "e") == 0)
+		*answer = M_E;
+	else {
+		free(answer);
+		return -1;
+	}
+	stack_push(_stack, answer);
+	return 0;
 }
 
 static int is_number(char s[])
