@@ -37,3 +37,15 @@ Examples
     sqrt(ceil((3 - sqrt(5)) * 1000))
     > 27.6405
 ```
+
+Building
+====
+
+```sh
+    cd calc
+    mkdir bin
+    cd bin
+    cmake ..
+    make
+    ./src/calc
+```

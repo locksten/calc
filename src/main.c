@@ -4,9 +4,9 @@
 #include <ctype.h>
 #include <math.h>
 #include <stdbool.h>
-#include "../include/rpn_calc.h"
-#include "../include/shunting_yard.h"
-#include "../include/tokenizer.h"
+#include "rpn_calc.h"
+#include "shunting_yard.h"
+#include "tokenizer.h"
 
 #define MAX_INPUT_SIZE 4096
 

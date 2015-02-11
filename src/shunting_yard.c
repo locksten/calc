@@ -1,5 +1,5 @@
-#include "../include/shunting_yard.h"
-#include "../include/stack.h"
+#include "shunting_yard.h"
+#include "stack.h"
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
